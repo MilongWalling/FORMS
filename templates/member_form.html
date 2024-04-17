@@ -1,0 +1,46 @@
+<!-- In member_form/templates/member_form.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Member Form</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Main</h2>
+        <form method="post" class="needs-validation" novalidate enctype="multipart/form-data">
+            {% csrf_token %}
+            <!-- Render Member form fields -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Member Information</h5>
+                    {{ member_form.as_p }}
+                </div>
+            </div>
+
+            <!-- Render Address form fields -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Address Information</h5>
+                    {{ address_form.as_p }}
+                </div>
+            </div>
+
+            <!-- Render Family form fields -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Family Information</h5>
+                    {{ family_form.as_p }}
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Include Bootstrap JS (Optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/styles.css' %}">
+</head>
+<body>
+    <h1>Member Profile</h1>
+    <!-- Add any additional content here -->
+    <p>Full Name: {{ member_details.full_name }}</p>
+    <p>Gender: {{ member_details.gender}}</p>
+    <p>Member Type: {{ member_details.member_type}}</p>
+    <p>DOB:{{ member_details.date_of_birth}}</p>
+    <p>Occupation: {{ member_details.occupation}}</p>
+    {% if member_details.profile_picture %}
+    <img src="{{ member_details.profile_picture.url }}" alt="Profile Picture">
+    {% endif %}
+    <h2>Family Members</h2>
+        {% for family in family_members %}
+        {{ family.member2.full_name}}<br>
+        {% endfor %}
+    <a href="{% url 'add_family_member' member_details.id%}">Add Family Member</a>
+    <a href="{% url 'members_list'%}">Go to Home Page</a>
+</body>
+</html>

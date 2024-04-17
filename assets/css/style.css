@@ -1,0 +1,38 @@
+/* .sidebar {
+    height: 100%;
+    width: 100px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #3c003a;
+    padding-top: 20px;
+  }
+
+  /* Style sidebar links */
+  /* .sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #bdc7d0;
+    display: block;
+  } */
+
+  /* Change color on hover */
+  /* .sidebar a:hover {
+    background-color: #650557;
+  } */
+
+  /* Add padding to container content */
+  /* .container {
+    margin-left: 250px;
+    padding: 20px;
+  } */ 
+
+
+ 
+  /* CSS for adjusting image size */
+.profile-picture {
+    max-width: 200px; /* Adjust as needed */
+    max-height: 200px; /* Adjust as needed */
+  }

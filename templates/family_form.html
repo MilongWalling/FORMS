@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+</head>
+<body>
+    <form method="POST">
+    {% csrf_token%}
+     <!-- Render Family form fields -->
+     <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Family Information for {{member_name}}</h5>
+            {{ family_form.as_p }}
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>

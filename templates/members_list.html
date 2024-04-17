@@ -1,0 +1,40 @@
+<!-- members_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Members List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <h1>Members List</h1>
+    <div>
+        <a href="{% url 'member_form' %}"  class="btn btn-primary">Add Member</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Member Type</th>
+                <th>Gender</th>
+                <!-- Add more table headers for other member fields as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+            <tr>
+                <td>{{ member.full_name }}</td>
+                <td>{{ member.member_type }}</td>
+                <td>{{member.gender}}</td>
+                <!-- Add more table data for other member fields as needed -->
+                <td><a href="{% url 'edit_member' member.id %}">Edit</a></td>
+            </tr>
+
+            {% endfor %}
+        
+        </tbody>
+    </table>
+</body>
+</html>
